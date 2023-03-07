@@ -1,4 +1,3 @@
-import Home from "./home_page";
 import { getSortedPostsData } from "../lib/posts";
 
 export default async function Page() {
