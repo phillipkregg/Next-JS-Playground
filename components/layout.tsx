@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Phil";
@@ -41,12 +40,12 @@ export default function Layout({ children, home }: LayoutType) {
             <Image
               priority
               src="/images/profile.jpeg"
-              className={utilStyles.borderCircle}
+              className=""
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className="">{name}</h1>
           </>
         ) : (
           <>
@@ -54,14 +53,14 @@ export default function Layout({ children, home }: LayoutType) {
               <Image
                 priority
                 src="/images/profile.jpeg"
-                className={utilStyles.borderCircle}
+                className=""
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className="">
+              <Link href="/" className="">
                 {name}
               </Link>
             </h2>
