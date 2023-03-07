@@ -30,6 +30,11 @@ export default function Layout({ children, home }: LayoutType) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <nav>
+        <ul>
+          <Link href="/taskList">Task Managment</Link>
+        </ul>
+      </nav>
       <header className={styles.header}>
         {home ? (
           <>
