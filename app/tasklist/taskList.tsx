@@ -1,10 +1,16 @@
 "use client";
 
 import { PlusIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import TaskRow from "./taskRow";
 
-const mockTasks = [
+interface ITask {
+  title: string;
+  complete: boolean;
+  isEditMode?: boolean;
+}
+
+const mockTasks: ITask[] = [
   {
     title: "My first task",
     complete: false,
@@ -28,13 +34,10 @@ const mockTasks = [
 ];
 
 const TaskList = () => {
-  const [tasks, setTasks] = useState(mockTasks);
+  const [tasks, setTasks] = useState<ITask[]>(mockTasks);
 
   const addNewTask = () =>
-    setTasks((oldArray) => [
-      { title: "", completed: false, isEditMode: true },
-      ...oldArray,
-    ]);
+    setTasks([{ title: "", complete: false, isEditMode: true }, ...tasks]);
 
   return (
     <div className="px-5 py-10 my-8 rounded-lg bg-gray-50">

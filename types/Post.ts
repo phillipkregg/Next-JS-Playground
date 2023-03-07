@@ -1,7 +1,8 @@
 interface Post {
-  id?: string;
+  id: string;
   title?: string;
   date?: string;
+  contentHtml?: any;
 }
 
 export default Post;

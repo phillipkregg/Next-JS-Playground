@@ -2,7 +2,7 @@ import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import TaskInput from "./TaskInput";
 
 interface Props {
-  isEditMode: boolean;
+  isEditMode?: boolean;
   title: string;
   complete: boolean;
 }

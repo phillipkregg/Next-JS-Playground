@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Date from "../../components/date";
 import { getSortedPostsData } from "../../lib/posts";
+import Post from "../../types/Post";
 
 async function getPosts() {
   const allPostsData = await getSortedPostsData();
@@ -8,7 +9,7 @@ async function getPosts() {
 }
 
 export default async function Page() {
-  const posts = await getPosts();
+  const posts: Post[] = await getPosts();
 
   return (
     <div>
