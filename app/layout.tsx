@@ -27,6 +27,14 @@ export default function RootLayout({
                   Home
                 </Link>
               </li>
+              <li className="float-left inline-block">
+                <Link
+                  href={"/posts"}
+                  className="px-4 py-4 ease-in-out duration-100 bg-blue-500 text-white hover:bg-blue-300 hover:text-blue-800 no-underline hover:no-underline"
+                >
+                  Posts
+                </Link>
+              </li>
               <li className="float-left">
                 <Link
                   href={"/tasklist"}

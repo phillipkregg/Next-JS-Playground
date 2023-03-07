@@ -1,19 +1,27 @@
 import Link from "next/link";
 
-export default function TasklistLayout({
-  children, // will be a page or nested layout
+export const metadata = {
+  title: "Home",
+  description: "Welcome to Next.js",
+};
+
+export default function RootLayout({
+  // Layouts must accept a children prop.
+  // This will be populated with nested layouts or pages
+  children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2>The Task Manager app</h2>
+    <section className="">
+      <h2 className="text-2xl">The Task Manager app</h2>
       {/* Include shared UI here e.g. a header or sidebar */}
+
+      {children}
+
       <nav>
         <Link href="/">Back to home</Link>
       </nav>
-
-      {children}
     </section>
   );
 }

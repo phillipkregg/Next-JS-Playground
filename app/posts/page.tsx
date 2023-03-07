@@ -1,9 +1,15 @@
-"use client";
-
 import Link from "next/link";
-import Date from "../components/date";
+import Date from "../../components/date";
+import { getSortedPostsData } from "../../lib/posts";
 
-export default function Home({ posts }) {
+async function getPosts() {
+  const allPostsData = await getSortedPostsData();
+  return allPostsData;
+}
+
+export default async function Page() {
+  const posts = await getPosts();
+
   return (
     <div>
       <section>
