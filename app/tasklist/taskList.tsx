@@ -40,10 +40,12 @@ const TaskList = () => {
     isEditMode: true,
   });
   const [tasks, setTasks] = useState<ITask[]>(mockTasks);
+  const [disabled, setDisabled] = useState(false);
 
+  // If a new task is added to the list, prevent user from adding more until they input a name and press enter
   useEffect(() => {
-    debugger;
-  }, [singleTask]);
+    setDisabled((disabled) => !disabled);
+  }, [tasks]);
 
   const addNewTask = () => setTasks([singleTask, ...tasks]);
 
@@ -51,9 +53,12 @@ const TaskList = () => {
     <div className="px-5 py-10 my-8 rounded-lg bg-gray-50">
       <div className="mb-8">
         <button
+          disabled={disabled}
           onClick={addNewTask}
           type="button"
-          className="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className={`${
+            disabled === true ? "opacity-25" : ""
+          } ease-in-out duration-200 inline-flex items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
         >
           Create Task
           <PlusIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />

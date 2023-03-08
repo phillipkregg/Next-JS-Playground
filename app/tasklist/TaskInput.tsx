@@ -22,6 +22,7 @@ const TaskInput = ({
   return (
     <div className="rounded-md px-3 pt-2.5 pb-1.5 shadow-sm  ">
       <input
+        autoFocus
         value={inputVal}
         type="text"
         name="name"
