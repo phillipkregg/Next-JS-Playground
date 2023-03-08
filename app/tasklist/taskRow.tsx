@@ -1,8 +1,8 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { SetStateAction } from "react";
 import { Dispatch } from "react";
-import TaskInput from "./taskInput";
 import { ITask } from "./taskList";
+import TaskInput from "./taskInput";
 
 interface Props {
   isEditMode?: boolean;
