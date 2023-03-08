@@ -30,7 +30,8 @@
     "**/*.tsx",
     "**/*.page.tsx",
     "next.config.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "/Users/plackey289/JavaScript/next_js_projects/nextjs-blog/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

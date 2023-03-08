@@ -1,19 +1,23 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { SetStateAction } from "react";
+import { Dispatch } from "react";
 import TaskInput from "./TaskInput";
+import { ITask } from "./taskList";
 
 interface Props {
   isEditMode?: boolean;
   title: string;
   complete: boolean;
+  setAllTasks: Dispatch<SetStateAction<ITask[]>>;
 }
 
-const TaskRow = ({ isEditMode, title, complete }: Props) => {
+const TaskRow = ({ isEditMode, title, complete, setAllTasks }: Props) => {
   return (
     <>
       {isEditMode ? (
         <li className="px-2 py-2 mb-4 overflow-auto text-lg text-gray-800 bg-blue-100 rounded-lg">
           <div className="float-left w-2/3 ">
-            <TaskInput title={title} />
+            <TaskInput setAllTasks={setAllTasks} />
           </div>
           <div className="float-right ">
             <button
