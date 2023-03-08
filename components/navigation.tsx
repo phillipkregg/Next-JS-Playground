@@ -10,6 +10,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const tailwindImageLoader = ({ src, width, quality }) => {
+  return `https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600`;
+};
+
+const menuImageLoader = ({ src, width, quality }) => {
+  return `https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`;
+};
+
 export default function Navigation() {
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -31,11 +39,17 @@ export default function Navigation() {
               <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
                 <div className="flex items-center flex-shrink-0">
                   <Image
+                    loader={tailwindImageLoader}
+                    width={600}
+                    height={200}
                     className="block w-auto h-8 lg:hidden"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company"
                   />
                   <Image
+                    loader={tailwindImageLoader}
+                    width={600}
+                    height={200}
                     className="hidden w-auto h-8 lg:block"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company"
@@ -78,6 +92,9 @@ export default function Navigation() {
                     <Menu.Button className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
                       <Image
+                        loader={menuImageLoader}
+                        width={100}
+                        height={100}
                         className="w-8 h-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
