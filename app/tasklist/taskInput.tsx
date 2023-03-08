@@ -1,15 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import type { ITask } from "./taskList";
 
 const TaskInput = ({
   setAllTasks,
+  setDisabled,
 }: {
   setAllTasks: Dispatch<SetStateAction<Array<ITask>>>;
+  setDisabled: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [inputVal, setInputVal] = useState("");
+  const [inputVal, setInputVal] = useState<string>("");
+
+  useEffect(() => {
+    setDisabled(true);
+  }, [inputVal, setDisabled]);
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -17,6 +23,7 @@ const TaskInput = ({
         { title: inputVal, complete: false, isEditMode: false },
         ...oldTasks.slice(1),
       ]);
+      setDisabled(false);
     }
   };
   return (

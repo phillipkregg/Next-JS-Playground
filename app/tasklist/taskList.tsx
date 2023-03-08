@@ -40,12 +40,7 @@ const TaskList = () => {
     isEditMode: true,
   });
   const [tasks, setTasks] = useState<ITask[]>(mockTasks);
-  const [disabled, setDisabled] = useState(false);
-
-  // If a new task is added to the list, prevent user from adding more until they input a name and press enter
-  useEffect(() => {
-    setDisabled((disabled) => !disabled);
-  }, [tasks]);
+  const [disabled, setDisabled] = useState<boolean>(false);
 
   const addNewTask = () => setTasks([singleTask, ...tasks]);
 
@@ -67,7 +62,12 @@ const TaskList = () => {
 
       <ul className="">
         {tasks.map((task, idx) => (
-          <TaskRow key={idx} {...task} setAllTasks={setTasks} />
+          <TaskRow
+            key={idx}
+            {...task}
+            setAllTasks={setTasks}
+            setDisabled={setDisabled}
+          />
         ))}
       </ul>
     </div>

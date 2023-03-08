@@ -1,3 +1,5 @@
+"use client";
+
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { SetStateAction } from "react";
 import { Dispatch } from "react";
@@ -9,15 +11,22 @@ interface Props {
   title: string;
   complete: boolean;
   setAllTasks: Dispatch<SetStateAction<ITask[]>>;
+  setDisabled: Dispatch<SetStateAction<boolean>>;
 }
 
-const TaskRow = ({ isEditMode, title, complete, setAllTasks }: Props) => {
+const TaskRow = ({
+  isEditMode,
+  title,
+  complete,
+  setAllTasks,
+  setDisabled,
+}: Props) => {
   return (
     <>
       <li className="px-2 py-2 mb-4 overflow-auto text-lg text-gray-800 bg-blue-100 rounded-lg">
         {isEditMode ? (
           <div className="float-left w-2/3 ">
-            <TaskInput setAllTasks={setAllTasks} />
+            <TaskInput setAllTasks={setAllTasks} setDisabled={setDisabled} />
           </div>
         ) : (
           <div className="float-left ">{title}</div>
