@@ -75,6 +75,12 @@ export default function Navigation() {
                   >
                     Task List
                   </a>
+                  <a
+                    href="/datatables"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                  >
+                    Datatable Demos
+                  </a>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -150,6 +156,19 @@ export default function Navigation() {
                           </Link>
                         )}
                       </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            href="/datatables"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Datatable Demos
+                          </Link>
+                        )}
+                      </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -180,6 +199,13 @@ export default function Navigation() {
                 className="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 border-l-4 border-transparent hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
                 Task List
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/datatables"
+                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 border-l-4 border-transparent hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              >
+                Datatable Demos
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
