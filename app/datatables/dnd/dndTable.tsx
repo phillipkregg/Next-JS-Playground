@@ -179,14 +179,7 @@ const DndColumnsTable = () => {
   return (
     <div className="p-2">
       <div className="h-4" />
-      <div className="flex flex-wrap gap-2">
-        <button onClick={() => regenerateData()} className="p-1 border">
-          Regenerate
-        </button>
-        <button onClick={() => resetOrder()} className="p-1 border">
-          Reset Order
-        </button>
-      </div>
+
       <div className="h-4" />
       <table>
         <thead>
