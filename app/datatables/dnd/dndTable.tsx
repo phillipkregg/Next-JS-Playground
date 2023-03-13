@@ -158,8 +158,6 @@ const DndColumnsTable = () => {
     columns.map((column) => column.id as string) //must start out with populated columnOrder so we can splice
   );
 
-  const regenerateData = () => setData(() => makeData(20));
-
   const resetOrder = () =>
     setColumnOrder(columns.map((column) => column.id as string));
 
