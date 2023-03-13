@@ -21,8 +21,11 @@ export default function Layout({
           <li className="mr-6">
             <Link href={"/datatables/basic"}>Basic Datatable</Link>
           </li>
-          <li>
+          <li className="mr-6">
             <Link href={"/datatables/dnd"}>Drag N Drop Datatable</Link>
+          </li>
+          <li>
+            <Link href={"/datatables/pagination"}>Paginating Datatable</Link>
           </li>
         </ul>
       </nav>
